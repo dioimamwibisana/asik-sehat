@@ -8,7 +8,9 @@
     "test": "NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register",
     "clean": "rimraf dist",
     "start": "node server.js",
-    "tunnel": "browser-sync start --proxy localhost:7034 --tunnel bigwisu"
+    "tunnel": "browser-sync start --proxy localhost:7034 --tunnel bigwisu",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "react",
@@ -57,7 +59,8 @@
     "stylus-loader": "^2.4.0",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.15.0"
+    "webpack-hot-middleware": "^2.15.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-preset-stage-2": "^6.22.0",
@@ -65,5 +68,6 @@
     "expect-jsx": "^3.0.0",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2"
-  }
+  },
+  "snyk": true
 }
